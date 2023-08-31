@@ -1,50 +1,39 @@
 import streamlit as st
 
+st.markdown("""
+    # Artsy-FArtSci
 
-'''
-# TaxiFareModel front
-'''
-st.balloons()
-st.markdown('''
-Remember that there are several ways to output content into your web page...
+    ## Fine Art with Data Science!
 
-Either as with the title by just creating a string (or an f-string). Or as with this paragraph using the `st.` functions
-''')
+    Using the public [Artsy](https://www.artsy.net) database you can
+    find new public domain artists to enjoy and learn about by inputting
+    your own favorite piece of fine art. 
+    Join us on an exploration of **Art**, with **Data Science**
+    - bullet points
+""")
 
-'''
-## Here we would like to add some controllers in order to ask the user to select the parameters of the ride
 
-1. Let's ask for:
-- date and time
-- pickup longitude
-- pickup latitude
-- dropoff longitude
-- dropoff latitude
-- passenger count
-'''
+img_file_buffer = st.camera_input("Upload an image of the Art you like:")
 
-'''
-## Once we have these, let's call our API in order to retrieve a prediction
+if img_file_buffer is not None:
+    # To read image file buffer as bytes:
+    bytes_data = img_file_buffer.getvalue()
+    # Check the type of bytes_data:
+    # Should output: <class 'bytes'>
+    st.write(type(bytes_data))
 
-See ? No need to load a `model.joblib` file in this app, we do not even need to know anything about Data Science in order to retrieve a prediction...
+st.markdown("""
+    ## Do you understand?
+    """
+direction = st.radio('Select a direction', ('Yes', 'A little', 'No'))
 
-🤔 How could we call our API ? Of course... The `requests` package 💡
-'''
+st.write(direction)
 
-url = 'https://taxifare.lewagon.ai/predict'
-
-if url == 'https://taxifare.lewagon.ai/predict':
-
-    st.markdown('Maybe you want to use your own API for the prediction, not the one provided by Le Wagon...')
-
-'''
-
-2. Let's build a dictionary containing the parameters for our API...
-
-3. Let's call our API using the `requests` package...
-
-4. Let's retrieve the prediction from the **JSON** returned by the API...
-
-## Finally, we can display the prediction to the user
-'''
-
+if direction == 'Yes':
+    st.write('**Excellent!**')
+elif direction == 'A little bit':
+    st.write('please contact customer support')
+elif direction == 'No':
+    st.write('Read a book (or learn to read)')
+else:
+    st.write('please make a selection')
