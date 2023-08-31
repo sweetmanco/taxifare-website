@@ -25,15 +25,15 @@ if img_file_buffer is not None:
 st.markdown("""
     ## Do you understand?
     """
-direction = st.radio('Select a direction', ('Yes', 'A little', 'No'))
+# direction = st.radio('Select a direction', ('Yes', 'A little', 'No'))
 
-st.write(direction)
+# st.write(direction)
 
-if direction == 'Yes':
-    st.write('**Excellent!**')
-elif direction == 'A little bit':
-    st.write('please contact customer support')
-elif direction == 'No':
-    st.write('Read a book (or learn to read)')
-else:
-    st.write('please make a selection')
+# if direction == 'Yes':
+#     st.write('**Excellent!**')
+# elif direction == 'A little bit':
+#     st.write('please contact customer support')
+# elif direction == 'No':
+#     st.write('Read a book (or learn to read)')
+# else:
+#     st.write('please make a selection')
