@@ -24,7 +24,7 @@ if img_file_buffer is not None:
 
 st.markdown("""
     ## Do you understand?
-    """
+    """)
 # direction = st.radio('Select a direction', ('Yes', 'A little', 'No'))
 
 # st.write(direction)
